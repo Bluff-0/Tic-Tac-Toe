@@ -1,0 +1,82 @@
+*{
+	text-align: center;
+	text-decoration: none;
+}
+body{
+	background-color: #FEFAE0;
+}
+header{
+	font-size: 34px;
+	background-color: #D3C4E3;
+	text-decoration: none;
+	/*color: #686963;*/
+	color: #000;
+	border-radius: 25px;
+	width: 500px;
+}
+section{
+	width: 60%;
+	display: inline-flex;
+}
+main{
+	background-color: #8F95D3;
+	margin-left: 25%;
+	padding-top: 10px;
+	width: 530px;
+	height: 330px;
+}
+main > section > div{
+	width: 33.33%;
+	height: 100px;
+}
+.main-after{
+	animation: mymove 100s;
+}
+@keyframes mymove {
+    0% {opacity: 1;}
+    0.5% {opacity: 0.9;}
+    1% {opacity: 0.8;}
+    1.5% {opacity: 0.7;}
+    2% {opacity: 0.6;}
+    2.5% {opacity: 0.5;}
+    3% {opacity: 0.4;}
+    3.5% {opacity: 0.3;}
+    4% {opacity: 0.2;}
+    4.5% {opacity: 0.1;}
+    5% {opacity: 0;}
+    10% {opacity: 0;}
+    25% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 0;}
+}
+#b1{ border-right: 2px solid #89DAFF; border-bottom: 2px solid #89DAFF;}
+#b2{ border-left: 2px solid #89DAFF; border-right: 2px solid #89DAFF; border-bottom: 2px solid #89DAFF;}
+#b3{ border-left: 2px solid #89DAFF; border-bottom: 2px solid #89DAFF;}
+#b4{ border-right: 2px solid #89DAFF; border-bottom: 2px solid #89DAFF; border-top: 2px solid #89DAFF;}
+#b5{ border-left: 2px solid #89DAFF; border-right: 2px solid #89DAFF; border-bottom: 2px solid #89DAFF; border-top: 2px solid #89DAFF;}
+#b6{ border-left: 2px solid #89DAFF; border-bottom: 2px solid #89DAFF; border-top: 2px solid #89DAFF;}
+#b7{ border-right: 2px solid #89DAFF; border-top: 2px solid #89DAFF;}
+#b8{ border-left: 2px solid #89DAFF; border-right: 2px solid #89DAFF; border-top: 2px solid #89DAFF;}
+#b9{ border-left: 2px solid #89DAFF; border-top: 2px solid #89DAFF;}
+.x{
+	height: 75px;
+	width: 75px;
+	display: none
+}
+.o{
+	height: 75px;
+	width: 75px;
+	display: none;
+	margin-top: 7%;
+}
+body > div{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	background-color: #58504A;
+	color: #fff;
+	border-radius: 20px;
+	padding-bottom: 10px;
+	float: right;
+	width: 25%;
+}

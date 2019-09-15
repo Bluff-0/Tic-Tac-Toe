@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+</head>
+<body>
+	<a href="index.html"><header>
+		<h1>Tic-Tac-Toe</h1>
+	</header></a>
+	<main id="main">
+		<section>
+			<div id="b1" onclick="cross(0);">
+				<img class="x" src="x.png" id="b0imgx">
+				<img class="o" src="0.png" id="b0img0">
+			</div>&nbsp;
+			<div id="b2" onclick="cross(1);">
+				<img class="x" src="x.png" id="b1imgx">
+				<img class="o" src="0.png" id="b1img0">
+			</div>&nbsp;
+			<div id="b3" onclick="cross(2);">
+				<img class="x" src="x.png" id="b2imgx">
+				<img class="o" src="0.png" id="b2img0">
+			</div>&nbsp;
+		</section>
+		<section>
+			<div id="b4" onclick="cross(3);">
+				<img class="x" src="x.png" id="b3imgx">
+				<img class="o" src="0.png" id="b3img0">
+			</div>&nbsp;
+			<div id="b5" onclick="cross(4);">
+				<img class="x" src="x.png" id="b4imgx">
+				<img class="o" src="0.png" id="b4img0">
+			</div>&nbsp;
+			<div id="b6" onclick="cross(5);">
+				<img class="x" src="x.png" id="b5imgx">
+				<img class="o" src="0.png" id="b5img0">
+			</div>&nbsp;
+		</section>
+		<section>
+			<div id="b7" onclick="cross(6);">
+				<img class="x" src="x.png" id="b6imgx">
+				<img class="o" src="0.png" id="b6img0">
+			</div>&nbsp;
+			<div id="b8" onclick="cross(7);">
+				<img class="x" src="x.png" id="b7imgx">
+				<img class="o" src="0.png" id="b7img0">
+			</div>&nbsp;
+			<div id="b9" onclick="cross(8);">
+				<img class="x" src="x.png" id="b8imgx">
+				<img class="o" src="0.png" id="b8img0">
+			</div>&nbsp;
+		</section>
+	</main>
+	<div id="Msg-user" style="display: none;"><h1>User Wins</h1></div>
+	<div id="Msg-pc" style="display: none;"><h1>Computer Wins</h1></div>
+	<div id="Msg-draw" style="display: none;"><h1>!!! It's a draw !!!</h1></div>
+</body>
+<script type="text/javascript">
+	var arr=[99,99,99,99,99,99,99,99,99];
+	function cross(a)
+	{
+		if (arr[a]==0 || arr[a]==1) { return; }
+		document.getElementById(`b${a}imgx`).style.display='block';
+		document.getElementById(`b${a}imgx`).style.marginLeft='16%';
+		document.getElementById(`b${a}imgx`).style.marginTop='6%';
+		arr[a]=1;
+		console.log("User: ",a);
+		if (arr[0]==1&&arr[1]==1&&arr[2]==1 || arr[3]==1&&arr[4]==1&&arr[5]==1 || arr[6]==1&&arr[7]==1&&arr[8]==1 || arr[0]==1&&arr[3]==1&&arr[6]==1 || arr[1]==1&&arr[4]==1&&arr[7]==1 || arr[2]==1&&arr[5]==1&&arr[8]==1 || arr[0]==1&&arr[4]==1&&arr[8]==1 || arr[2]==1&&arr[4]==1&&arr[6]==1)
+			{
+				document.getElementById("main").classList.add("main-after");
+				document.getElementById(`Msg-user`).style.display='block';
+				return;
+			}
+		if ((arr[0]==0||arr[0]==1) && (arr[1]==0||arr[1]==1) && (arr[2]==0||arr[2]==1) && (arr[3]==0||arr[3]==1) && (arr[4]==0||arr[4]==1) && (arr[5]==0||arr[5]==1) && (arr[6]==0||arr[6]==1) && (arr[7]==0||arr[7]==1) && (arr[8]==0||arr[8]==1))
+			{
+				document.getElementById(`Msg-draw`).style.display='block';
+				document.getElementById("main").classList.add("main-after");
+				return;
+			}
+		var flag= true;
+		while(flag)
+		{
+			var x= Math.floor(Math.random(0,8)*9);
+			if(arr[x]==99)
+			{
+				document.getElementById(`b${x}img0`).style.display='block';
+				document.getElementById(`b${x}img0`).style.marginLeft='13px';
+				arr[x]=0;
+				console.log("PC: ",x);
+				flag= false;
+			}
+		}
+		if (arr[0]==0&&arr[1]==0&&arr[2]==0 || arr[3]==0&&arr[4]==0&&arr[5]==0 || arr[6]==0&&arr[7]==0&&arr[8]==0 || arr[0]==0&&arr[3]==0&&arr[6]==0 || arr[1]==0&&arr[4]==0&&arr[7]==0 || arr[2]==0&&arr[5]==0&&arr[8]==0 || arr[0]==0&&arr[4]==0&&arr[8]==0 || arr[2]==0&&arr[4]==0&&arr[6]==0)
+			{
+				document.getElementById(`Msg-pc`).style.display='block';
+				document.getElementById("main").classList.add("main-after");
+				return;
+			}
+	}
+</script>
+</html>
