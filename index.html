@@ -8,7 +8,7 @@
 	<a href="index.html"><header>
 		<h1>Tic-Tac-Toe</h1>
 	</header></a>
-	<main id="main">
+	<main id="main" onmouseover="bod();" onmouseout="nor();">
 		<section>
 			<div id="b1" onclick="cross(0);">
 				<img class="x" src="x.png" id="b0imgx">
@@ -57,6 +57,14 @@
 	<div id="Msg-draw" style="display: none;"><h1>!!! It's a draw !!!</h1></div>
 </body>
 <script type="text/javascript">
+	function bod() {
+		// body...
+		document.getElementById('main').style.borderRadius="225px";
+	}
+	function nor() {
+		// body...
+		document.getElementById('main').style.borderRadius="50px";
+	}
 	var arr=[99,99,99,99,99,99,99,99,99];
 	function cross(a)
 	{
